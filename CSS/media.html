@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        background-color: aqua;
+        height: 50px;
+        width: 50px;
+        margin-left: auto;
+      }
+      .box2 {
+        background-color: aqua;
+        height: 50px;
+        width: 50px;
+        margin-right: auto;
+      }
+
+      @media (max-width: 600px) {
+        .box1 {
+          margin: auto;
+        }
+        .box2 {
+          margin: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <br />
+    <div class="box2"></div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+
+body{
+    text-align: center;
+    background-image: linear-gradient(rgb(248, 161, 241),white);
+}
+
+#header-bar{
+    text-align: center;
+    background-image:linear-gradient(black,rgb(43, 42, 42));
+}
+
+#header-bar li{
+  display: inline-block;
+  font-size: larger;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+#header-bar a{
+font-size: larger;
+color: antiquewhite;
+padding-left: 30px;
+padding-right: 30px;
+}
+#header-bar a:hover{
+background-color: rgb(37, 35, 35);
+    }
+
+#Welcome-Page p{
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+ 
+#Skills-Page{
+  
+}
+ 
+#image1{
+    height: 100px;
+    width: 100px;
+}
+
+#Contact-Page{
+  
+}
+ 
+hr{
+    margin: auto;
+}
+
+#Bar{
+  
+}
+
+td{
+    padding-left: 20px;
+    padding-right: 20px;
+}

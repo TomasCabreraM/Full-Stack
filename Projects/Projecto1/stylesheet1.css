@@ -1,0 +1,54 @@
+body{
+    text-align: center;
+    background-color: aqua;
+}
+
+/* Style the navigation bar itself */
+#Navbar {
+background-color: #333; /* Dark background color */
+text-align: center;
+}
+
+/* Style the navigation links */
+#Navbar li {
+display: inline-block;
+}
+
+#Navbar li a {
+    display:block; /* Makes the whole area clickable */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    padding: 14px 16px; /* Add space around the text */
+    text-decoration: none; /* Remove underlines from links */
+}
+
+/* Change the color of links on hover */
+#Navbar li a:hover {
+    background-color: #111; /* Darker shade on hover */
+}
+
+#section2 #Image1{
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+
+#section2 #text1{
+    justify-content: center;
+}
+
+#Image2{
+    float: right;
+    height: 100px;
+    width: 100px;
+}
+
+#section2 #text2{
+    justify-content: center;
+}
+
+#barrafinal{
+  background-color: rgb(85, 28, 228);
+  width: auto;
+  height: 20px;
+}
