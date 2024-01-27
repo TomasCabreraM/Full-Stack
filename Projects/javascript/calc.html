@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <h1>Lets calculate something</h1>
+    <br>
+    <hr>
+    <div id="section-1">
+        <table>
+            <tr>
+                <th colspan="2">Enter numbers below</th>
+            </tr>
+            <tr>
+                <td><input type="number" name="number1" id="number1"></td>
+                <td><input type="number" name="number2" id="number1"><td>
+            </tr>
+            <tr>
+                <td><button id="buttons" onclick="minus()">-</button></td>
+                <td><button id="buttons" onclick="add()">+</button></td>
+            </tr>
+            <tr>
+                <td><button id="buttons" onclick="multiply()">*</button></td>
+                <td><button id="buttons" onclick="divide()">/</button></td>
+            </tr>
+            <tr>
+            <td colspan="2"><p id="result">Result =</p></td>
+            </tr>
+        </table>
+    </div>
+    <script src="calc.js"></script>
+</body>
+</html>
