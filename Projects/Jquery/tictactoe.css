@@ -1,0 +1,31 @@
+html{
+    height: 100%;
+    background: linear-gradient(blue,white);
+}
+h1{
+    text-align: center;
+}
+.block{
+    background-color: blue;
+    height: 120px;
+    width: 120px;
+    border: 2px solid black;
+    display: flex;
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 500%;
+}
+.game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+.noMoreClicks{
+    pointer-events: none;
+}

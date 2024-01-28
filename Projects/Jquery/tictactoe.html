@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tictactoe.css">
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<div>
+    <h1>Lets play TicTacToe</h1>
+    <br>
+    <hr>
+    <div class="game">
+        <div class="block" id="block1"></div>
+        <div class="block" id="block2"></div>
+        <div class="block" id="block3"></div>
+    </div>
+    <div class="game">
+        <div class="block" id="block4"></div>
+        <div class="block" id="block5"></div>
+        <div class="block" id="block6"></div>
+    </div>
+    <div class="game">
+        <div class="block" id="block7"></div>
+        <div class="block" id="block8"></div>
+        <div class="block" id="block9"></div>
+    </div>
+    <div>
+        <h2 id="info-text">Player One Turn</h2>
+    </div>
+</div>
+<script src="tictactoe.js"></script>
+<script>
+    $(".block").click(function(){
+
+var theClassClicked = this.id;
+
+if($("h2").text() == "Player One Turn"){
+    var playerLetter = "X";
+    $("h2").text("Player Two Turn");
+    $("#" + theClassClicked).text(playerLetter)
+    $("#" + theClassClicked).addClass("noMoreClicks")
+    CheckIfWin();
+} else{
+    var playerLetter = "O";
+    $("h2").text("Player One Turn");
+    $("#" + theClassClicked).text(playerLetter)
+    $("#" + theClassClicked).addClass("noMoreClicks")
+    CheckIfWin();
+}
+})
+
+function CheckIfWin() {
+    if($("#block1").text() == "X" && $("#block2").text() == "X" && $("#block3").text() == "X"){
+        $("h2").text("Player One Won")
+        $(".block").addClass("noMoreClicks")
+    }
+    if($("#block1").text() == "X" && $("#block4").text() == "X" && $("#block7").text() == "X"){
+        $("h2").text("Player One Won")
+        $(".block").addClass("noMoreClicks")
+    }
+    if($("#block1").text() == "X" && $("#block5").text() == "X" && $("#block9").text() == "X"){
+        $("h2").text("Player One Won")
+        $(".block").addClass("noMoreClicks")
+    }
+    if($("#block3").text() == "X" && $("#block6").text() == "X" && $("#block9").text() == "X"){
+        $("h2").text("Player One Won")
+        $(".block").addClass("noMoreClicks")
+    }
+    if($("#block7").text() == "X" && $("#block8").text() == "X" && $("#block9").text() == "X"){
+        $("h2").text("Player One Won")
+        $(".block").addClass("noMoreClicks")
+    }
+    if($("#block1").text() == "O" && $("#block2").text() == "O" && $("#block3").text() == "O"){
+        $("h2").text("Player two Won")
+        $(".block").addClass("noMoreClicks")
+    }
+    if($("#block1").text() == "O" && $("#block4").text() == "O" && $("#block7").text() == "O"){
+        $("h2").text("Player two Won")
+        $(".block").addClass("noMoreClicks")
+    }
+    if($("#block1").text() == "O" && $("#block5").text() == "O" && $("#block9").text() == "O"){
+        $("h2").text("Player two Won")
+        $(".block").addClass("noMoreClicks")
+    }
+    if($("#block3").text() == "O" && $("#block6").text() == "O" && $("#block9").text() == "O"){
+        $("h2").text("Player One Won")
+        $(".block").addClass("noMoreClicks")
+    }
+    if($("#block7").text() == "O" && $("#block8").text() == "O" && $("#block9").text() == "O"){
+        $("h2").text("Player One Won")
+        $(".block").addClass("noMoreClicks")
+    }
+}
+</script>
+</body>
+</html>

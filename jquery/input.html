@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <h1>Answer</h1>
+    <input type="text" name="input1" id="input1">
+    <button id="button1">Submit</button>
+    <script src="input.js"></script>
+
+<script>
+    $("#button1").click(function () { 
+    var newText = $("#input1").val();
+    $("h1").text(newText)
+});
+</script>
+
+</body>
+</html>
