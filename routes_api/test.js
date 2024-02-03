@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
-const masterKey = '';
+const masterKey = 'this-is-my-key';
 
 
 app.get("/", (req, res) => {
@@ -41,6 +41,59 @@ app.post("/items", (req, res) => {
     console.log(items.slice(-1));
     res.json(newItem);
 })
+
+app.put("/items/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const replacmentItem = {
+        id: id,
+        itemText: req.body.itemText,
+        type: req.body.type,
+    };
+    const searchIndex = items.findIndex((item) => item.id === id);
+    items[searchIndex] = replacmentItem
+    res.json(replacmentItem)   
+})
+
+app.patch("/items/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const existingItem   = items.find((item) => item.id === id);
+    const replacmentItem = {
+        id: id,
+        itemText: req.body.itemText || existingItem.itemText,
+        type: req.body.type || existingItem.type,
+    };
+    const searchIndex = items.findIndex((item) => item.id === id);
+    items[searchIndex] = replacmentItem;
+    console.log(items[searchIndex]);
+    res.json(replacmentItem)
+})
+
+app.delete("/all", (req, res) => {
+    const userKey = req.query.key;
+    if(userKey == masterKey){
+        items = [];
+        res.sendStatus(200);
+    } else{
+        res
+        .status(404)
+        .json({error: `You are not authorize to delete all items`});
+    };
+})
+
+app.delete("/items/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const searchIndex = items.findIndex((item) => item.id === id);
+    if(searchIndex > -1){
+        items.splice(searchIndex, 1);
+        res.sendStatus(200);
+    } else{
+        res
+        .status(404)
+        .json({error: `item with id: ${id} not found.
+        No items were deleted`})}
+})
+
+
 
 app.listen(port,()=>{
     console.log("Server is running on port 3000")
