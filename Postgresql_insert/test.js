@@ -27,15 +27,51 @@ async function getStates(){
     return names;
 }
 
+var problem = "";
+
 app.get("/", async (req, res) => {
     const names = await getStates();
-    res.render("index.ejs", {names: names})
+    res.render("index.ejs", {names: names, problem: problem})
 })
 
 app.post("/submit", async (req, res) => {
     const newState = req.body["newState"];
+    try{
+        problem = "";
     await db.query("INSERT INTO states (name) VALUES ($1)", [newState,]);
     res.redirect('/');
+    }catch(err){
+        console.log(err);
+        problem = "Value was not inserted, ensure it is a string and not in use"
+        res.redirect('/');
+    }
+})
+
+app.post("/delete", async (req, res) => {
+    const newState = req.body["deleteState"];
+    try{
+        problem = "";
+    await db.query("DELETE FROM states WHERE name = ($1)", [newState,]);
+    res.redirect('/');
+    }catch(err){
+        console.log(err);
+        problem = "Value was not inserted, ensure it is a string and not in use"
+        res.redirect('/');
+    }
+})
+
+app.post("/update", async (req, res) => {
+    const newState = req.body["updatedState"];
+    const updatedState = req.body["theUpdate"];
+    try{
+        problem = "";
+    await db.query("UPDATE states SET name = ($2) WHERE name = ($1)", [newState,updatedState]);
+    res.redirect('/');
+    }catch(err){
+        console.log(err);
+        problem = "Value was not inserted, ensure it is a string and not in use"
+        res.redirect('/');
+    }
 })
 
 app.listen(port, () => {

@@ -1,0 +1,21 @@
+<style>
+    div{
+        text-align: center;
+    }
+</style>
+<div>
+    <h1>Please enter your new username and password</h1>
+    <form action="/create-new-account" method="post">
+        <input type="text" name="input-username" placeholder="username">
+        <br><br>
+        <input type="text" name="input-password" placeholder="password">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <h2 id="errorMessage"></h2>
+    <br>
+</div>
+<script>
+    const issue = "<%= problem %>";
+    document.getElementById("errorMessage").innerHTML = issue;
+</script>

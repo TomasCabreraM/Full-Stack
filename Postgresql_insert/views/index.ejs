@@ -1,10 +1,26 @@
 <h1>Below are my outputed states names</h1>
 <h2 id="newWords"></h2>
 <form action="/submit" method="post">
-    <input type="text" name="newState" placeholder="type here for new state" style="width: 220px;">
+    <input type="text" name="newState" placeholder="type here to create state" style="width: 220px;">
     <button type="submit">Submit</button>
+    <h3 id="error"></h3>
+</form>
+<form action="/delete" method="post">
+    <input type="text" name="deleteState" placeholder="type here to delete state" style="width: 220px;">
+    <button type="delete">Submit</button>
+    <h3 id="error"></h3>
+</form>
+<br>
+<form action="/update" method="post">
+    <input type="text" name="updatedState" placeholder="type here for state update" style="width: 220px;">
+    <input type="text" name="theUpdate" placeholder="type to set the update" style="width: 220px;">
+    <button type="update">Submit</button>
+    <h3 id="error"></h3>
 </form>
 <script>
+    const issue = "<%= problem %>";
+    document.getElementById("error").innerHTML = issue;
+
     const allName = "<%= names %>";
     document.getElementById("newWords").innerHTML = allName.replaceAll(",",", ");
 </script>
