@@ -1,0 +1,13 @@
+<form action="/submit" method="post">
+    <h3>Your score = <span><%= locals.score %></span></h3>
+    <h1><%= locals.name %></h1>
+    <div>
+        <input type="text" name="answer" id="userInput" placeholder="What is this pets favorite food" style="width: 220px;">
+    </div>
+    <br>
+    <button type="submit">Send</button>
+    <% if(locals.wasCorrect===true && locals.questionsStarted===true) {%>
+        <br><br>
+        <span>Correct!</span>
+        <%  %>
+</form>

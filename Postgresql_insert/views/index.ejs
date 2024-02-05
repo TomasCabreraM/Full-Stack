@@ -1,0 +1,10 @@
+<h1>Below are my outputed states names</h1>
+<h2 id="newWords"></h2>
+<form action="/submit" method="post">
+    <input type="text" name="newState" placeholder="type here for new state" style="width: 220px;">
+    <button type="submit">Submit</button>
+</form>
+<script>
+    const allName = "<%= names %>";
+    document.getElementById("newWords").innerHTML = allName.replaceAll(",",", ");
+</script>
